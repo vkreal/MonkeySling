@@ -1,0 +1,642 @@
+﻿/*
+YUI 3.5.1 (build 22)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{color:#000;/*background:#FFF*/}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+/* start custom css */
+
+
+@font-face {
+  font-family: 'Bangers';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bangers'), local('Bangers-Regular'), url(DqeGA7eaz0hhOYTfkeJBIA.woff) format('woff');
+}
+
+body
+{
+    overflow:hidden !important;
+}
+
+
+.shared-web-tilebg 
+{
+    background-image: url(../web/tilebg.png);
+    background-repeat: repeat;
+}
+
+
+html {
+    //overflow: hidden;
+    -ms-content-zooming: none; /* Disable pan/zoom */
+    //background-color:#B6E0F4;
+    height: 100%;
+    width: 100%;
+}
+.fill
+{
+    width: 100%;
+    height: 100%;    
+}
+.wait-underlay
+{
+    z-index: 9999;
+    background-color: #000;
+    opacity: 0.8;
+    top: 0px;
+    left:0px;
+    position:absolute;
+}
+.text-shadow2 
+{
+    color: #fff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+.text-shadow2-blue 
+{
+    color: #fff;
+    text-shadow: -2px 0 navy, 0 2px navy, 2px 0 navy, 0 -2px navy;
+}
+.tutorial-intro-wrapper
+{
+    z-index:100 !important;
+}
+.tutorial-intro
+{
+    border:10px solid #fff;
+    width: 650px !important;
+    height: 500px;
+    border-radius: 40px;
+    background-color:#8AC6EB;
+    font-family: 'Bangers', Comic Sans MS;
+    color: #000;
+    text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
+    font-size: 36px;
+}
+
+.tutorial-intro-titlebar
+{
+    width: 90%;
+    height: 50px;
+    background-color: whitesmoke;
+    border-radius: 40px;
+    opacity: .6;
+    margin-top: 10px;
+}
+.tutorial-intro-number
+{
+    background-color: blue;
+    border-radius: 100px;
+    opacity: .6;
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+    margin-right: 10px;
+     color: #fff;
+    text-shadow:none;
+}
+.wait-title 
+{
+    font-family: 'Bangers', Comic Sans MS;
+    color: #fff;
+    font-size: 46px;
+}
+.game-title 
+{
+    color:#fff;
+    font-weight:bold;
+    font-size: 96px;
+    font-family: 'Bangers', Comic Sans MS;
+}
+
+.win8-snapped-view {
+     font-family: 'Bangers', Comic Sans MS;
+     font-size: 24px;
+     z-index: 10000;
+    background-color:green;
+}
+
+
+.ingame-main-play-button 
+{
+    background-image:url(../ingame/play-button.png);
+    border: 0px solid red;
+    margin:0px auto;
+    background-color     : transparent;
+	background-repeat    : no-repeat;
+	width:160px;
+	height:80px;
+	font-size: 46px;
+	color:#fff;
+    font-weight:bold;
+	font-family: 'Bangers', Comic Sans MS;
+}
+.level-selection-label 
+{
+    font-family: 'Bangers', Comic Sans MS;
+}
+.game-play-button-label 
+{
+    position:absolute;
+   // border: 1px solid blue;
+    padding-top: 14px;
+   // margin-left:10px;
+    width:160px;
+    color:brown;
+}
+
+.category-cell-padding2
+{
+    display: inline-block;
+	text-align: center;
+	//border: 1px solid green;
+}
+.category-label 
+{
+    font-family: 'Bangers', Comic Sans MS;
+}
+.category-selection-description
+{
+    font-family: 'Bangers', Comic Sans MS;
+    font-size: 32px;
+    padding-top: 10px !important;
+}
+.category-cell 
+{
+    font-family: 'Bangers', Comic Sans MS !important;
+    display: inline-block;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 50px;
+	border-radius: 5px;
+	//border: 1px solid blue;
+	//opacity: .8;
+}
+.category-item 
+{
+    background-color:#fff;    
+    width: 400px;
+    height: 300px;
+    border-radius: 40px;
+    border: 10px solid #fff;
+}
+
+.category-item-underlay
+{
+    background-color: #000;
+    opacity: 0.8;
+    top: 0px;
+    left:0px;
+    position:absolute;
+    width: 400px;
+    height: 300px;
+}
+.category-item-wrapper
+{
+    width: 400px;
+    height: 300px;
+    //display: block !important;
+    position:relative;
+}
+.category-item-screen 
+{
+    width: 400px;
+    height: 300px;
+    border-radius: 40px;
+}
+.category-item-td
+{
+    height: 300px;
+}
+.menu-container 
+{
+    position:absolute;
+  	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	//border: 1px solid red;
+	border-radius: 5px;
+	background:url(../transparent.gif)
+}
+.menu-cell{
+	display: inline-block;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 50px;
+	border-radius: 5px;
+	//border: 5px solid red;
+}
+.menu-content{
+	//background: white;
+	white-space: nowrap;
+	-webkit-transform-origin: left top;
+	-webkit-transform: translateZ(0);
+	-moz-transform-origin: left top;
+	-moz-transform: translateZ(0);
+	-ms-transform-origin: left top;
+	-ms-transform: translateZ(0);
+	-o-transform-origin: left top;
+	-o-transform: translateZ(0);
+	transform-origin: left top;
+	transform: translateZ(0);
+	border-radius: 5px;
+}
+
+.container 
+{ 
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	position: relative; 
+	border-radius: 5px; 
+}
+#canvas 
+{
+    -webkit-transform-origin: left top;
+	-webkit-transform: translateZ(0);
+	-moz-transform-origin: left top;
+	-moz-transform: translateZ(0);
+	-ms-transform-origin: left top;
+	-ms-transform: translateZ(0);
+	-o-transform-origin: left top;
+	-o-transform: translateZ(0);
+	transform-origin: left top;
+	transform: translateZ(0);
+	border-radius: 5px; 
+}
+
+
+/* BEGIN in Game Menu system */
+.ingame-back-button 
+{
+    position:absolute;
+    top: 10px;
+    left: 10px; 
+}
+.ingame-btn-pause 
+{
+    position:absolute;
+    top: 10px;
+    left: 10px; 
+}
+.ingame-container 
+{
+   position:absolute;
+   top:0px;
+}
+.ingame-shadow 
+{
+    opacity:0.4;
+    background-color:#000;
+}
+.ingame-menu-items-shadow 
+{
+    opacity:0.8;
+    background-color:#000;
+}
+.ingame-menu-items-wrapper 
+{
+    width: 250px;
+    height: 100%;
+    position:absolute;
+    top:0px;
+    border: 0px solid red;
+}
+.ingame-stars-buttons-wrapper-shadow 
+{
+    opacity:0.8;
+    background-color:#000;
+}
+.ingame-stars-buttons-wrapper 
+{
+    width: 425px;
+    height: 100%;    
+}
+.ingame-newLevelButton 
+{
+    width:100px;height:100px;
+    background-color: #fff;
+    opacity: .5;
+    border-style:dashed !important;
+    border-radius: 20px;
+}
+.ingame-newLevelButton-hidden
+{
+    width:100px;
+    height:100px;
+}
+.ingame-myLevelButton 
+{
+    width:100px;
+    height:100px;
+    border: 4px solid white;
+    border-radius: 20px;
+}
+.ingame-myLevelButton-img 
+{
+    border-radius: 15px;
+    width:100px;
+    height:100px;
+   // border: 6px solid white;
+}
+
+.ingame-btn-pause, 
+.ingame-btn-play, 
+.ingame-btn-refresh, 
+.ingame-btn-main, 
+.ingame-btn-music,
+.ingame-btn-music-off,
+.ingame-btn-music-small,
+.ingame-btn-music-small-off,
+.ingame-btn-add,
+.ingame-back-button,
+.ingame-main-play-button,
+.ingame-btn-trashcan,
+.ingame-btn-trashcan-on,
+.ingame-btn-share,
+.LevelButtonUnlock,
+.LevelButtonLock,
+.LevelButtonUnlock-Star0,
+.LevelButtonUnlock-Star1,
+.LevelButtonUnlock-Star2,
+.LevelButtonUnlock-Star3,
+.ingame-btn-stop
+{
+    background-image:url(../ingame/yellow_buttons.png);
+    margin:0px auto;
+    background-color     : transparent;
+	background-repeat    : no-repeat;
+	width:100px;height:100px;
+}
+.ingame-btn-pause {opacity:0.5;}
+.float-right
+{
+    position:absolute;
+    right:10px;
+    top:10px;
+    float:right;
+    //border: 1px solid red;
+}
+.level-btn-number-label
+{
+    font-family: 'Bangers', Comic Sans MS;
+    color: #fff;
+    font-size: 56px;
+    padding-bottom: 4px !important;
+}
+.level-tab,
+.level-tab-selected
+{
+    background-image:url(../ingame/level_tab_circles.png);
+    margin:0px auto;
+    background-color     : transparent;
+	background-repeat    : no-repeat;
+	width:21px;
+	height:22px;
+	display:inline-block;
+}
+.level-tab-selected {background-position:-0px -0px;}
+.level-tab {background-position:-21px -0px;}
+
+.level-completed-star-on
+{
+    background-image:url(../ingame/big_star.png);
+    background-repeat    : no-repeat;
+    width:128px;
+    height:128px;
+}
+.level-completed-star-off
+{
+    background-image:url(../ingame/big_star_shadow.png);
+    background-repeat    : no-repeat;
+    width:128px;
+    height:128px;
+}
+.ingame-level-completed-title 
+{
+    color:#fff;
+    font-weight:bold;
+    font-size: 36px;
+    font-family: 'Bangers', Comic Sans MS;
+    margin-top: 40px;
+}
+
+.level-complete-template {
+    z-index: 100;
+    zoom: 1;
+}
+
+.level-myLevel-delete
+{
+    background-image:url(../ingame/level_delete.png);
+    background-position:right top;
+    background-repeat    : no-repeat;
+    width:24px;
+    height:24px;
+}
+/* END in Game Menu system */
+
+
+
+/* designer toolbox */
+
+.toolbox-body
+{
+    bottom: 0px;
+	position: absolute;
+	cursor: default;
+	overflow: hidden;
+    width: 100%;
+    height: 100px;
+    //border-top: 1px solid black;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	background:url(../transparent.gif)
+}
+.toolbox-shadow 
+{
+    opacity:0.4;
+    background-color:#000;
+    width: 100%;
+    height:100%;
+}
+.toolbox-container
+{
+    //opacity:0.4;
+    top:0px;
+	position: absolute;
+	overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.toolbox-content
+{
+	//background: white;
+	height: 100%;
+	-webkit-transform-origin: left top;
+	-webkit-transform: translateZ(0);
+	-moz-transform-origin: left top;
+	-moz-transform: translateZ(0);
+	-ms-transform-origin: left top;
+	-ms-transform: translateZ(0);
+	-o-transform-origin: left top;
+	-o-transform: translateZ(0);
+	transform-origin: left top;
+	transform: translateZ(0);
+}
+
+.toolbox-garbage 
+{
+    background-color: Red;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    bottom:0px;
+    opacity: .5;
+    //right: 0px;
+    //display: none;
+}
+
+
+/* GENERATED CSS */
+
+.LevelButtonLock
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -0px  -0px;
+}
+.LevelButtonUnlock-Star0
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -100px  -0px;
+}
+.LevelButtonUnlock-Star1
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -200px  -0px;
+}
+.LevelButtonUnlock-Star2
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -300px  -0px;
+}
+.LevelButtonUnlock-Star3
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -400px  -0px;
+}
+.LevelButtonUnlock
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -500px  -0px;
+}
+.ingame-back-button
+{
+    width              : 82px;
+    height             : 72px;
+    background-position: -600px  -0px;
+}
+.ingame-btn-add
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -682px  -0px;
+}
+.ingame-btn-main
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -782px  -0px;
+}
+.ingame-btn-music-off
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -882px  -0px;
+}
+.ingame-btn-music-small-off
+{
+    width              : 64px;
+    height             : 64px;
+    background-position: -982px  -0px;
+}
+.ingame-btn-music-small
+{
+    width              : 64px;
+    height             : 64px;
+    background-position: -1046px  -0px;
+}
+.ingame-btn-music
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1110px  -0px;
+}
+.ingame-btn-pause
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1210px  -0px;
+}
+.ingame-btn-play
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1310px  -0px;
+}
+.ingame-btn-refresh
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1410px  -0px;
+}
+.ingame-btn-share
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1510px  -0px;
+}
+.ingame-btn-stop
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1610px  -0px;
+}
+.ingame-btn-trashcan-on
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1710px  -0px;
+}
+.ingame-btn-trashcan
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1810px  -0px;
+}
+.ingame-main-play-button
+{
+    width              : 155px;
+    height             : 78px;
+    background-position: -1910px  -0px;
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Scroller - Snapping</title>
+
+	<script src="../src/Animate.js"></script>
+	<script src="../src/Scroller.js"></script>
+          
+	<script src="asset/render.js"></script>
+
+	<style type="text/css">
+	
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	
+	body{
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 12px;
+	}
+		
+	#container{
+		width: 1060px;
+		height: 600px;
+		border: 5px solid black;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		overflow: hidden;
+		
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+	
+	#content{
+		background: white;
+		//width: 2800px;
+		height: 2000px;
+		
+		-webkit-transform-origin: left top;
+		-webkit-transform: translateZ(0);
+		-moz-transform-origin: left top;
+		-moz-transform: translateZ(0);
+		-ms-transform-origin: left top;
+		-ms-transform: translateZ(0);
+		-o-transform-origin: left top;
+		-o-transform: translateZ(0);
+		transform-origin: left top;
+		transform: translateZ(0);
+	}
+	
+	.cell{
+		width: 400px;
+		height: 100%;
+		display: inline-block;
+		text-align: center;
+		line-height: 100%;
+	}
+	.cell2{
+		width: 100px;
+		height: 100%;
+		display: inline-block;
+		text-align: center;
+		line-height: 100%;
+		background-color: blue;
+	}
+	.cell3{
+		width: 200px;
+		height: 100%;
+		display: inline-block;
+		text-align: center;
+		line-height: 100%;
+		background-color: Red;
+	}
+	</style>
+
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+	var container = document.getElementById("container");
+	var content = document.getElementById("content");
+
+	// Content Generator
+	var size = 400;
+	var frag = document.createDocumentFragment();
+
+	var clientWidth = 0;
+	var count = 4;
+	//for (var row=0, rl=content.clientHeight/size; row<rl; row++) {
+	for (var cell = 0; cell < count; cell++) {
+
+	    if (cell == 0 || (cell + 1) > count) {
+	        elem = document.createElement("div");
+	        elem.className = "cell3";
+	        //elem.style.backgroundColor = cell % 2 > 0 ? "#ddd" : "";
+	        elem.innerHTML = cell;
+	        frag.appendChild(elem);
+	        clientWidth += 200;
+        }
+        
+	    elem = document.createElement("div");
+	    elem.className = "cell";
+	    elem.style.backgroundColor = "#ddd";
+	    elem.innerHTML = "ITEM GOES HERE";
+	    frag.appendChild(elem);
+	    clientWidth += 400;
+
+	    if (cell + 1 != count) {
+	        elem = document.createElement("div");
+	        elem.className = "cell2";
+	        elem.innerHTML = cell;
+	        frag.appendChild(elem);
+	        clientWidth += 100;
+        }
+
+	    if ((cell + 1) == count) {
+	        elem = document.createElement("div");
+	        elem.className = "cell3";
+	        elem.innerHTML = cell;
+	        frag.appendChild(elem);
+	        clientWidth += 200;
+	    }
+        
+
+
+        /*
+
+	    elem = document.createElement("div");
+	    elem.className = "cell";
+	    elem.style.backgroundColor = cell % 2 > 0 ? "#ddd" : "";
+	    elem.innerHTML = cell;
+	    frag.appendChild(elem);
+
+	    if (cell % 2 == 0) {
+
+	        //elem.style.backgroundColor = 'red'
+
+	        if (cell == 0 || cell == 8) {
+	            elem.className = 'cell3'
+
+	            clientWidth += 200;
+	        }
+	        else {
+	            elem.className = 'cell2'
+	            clientWidth += 400;
+	        }
+
+	        if (cell == 8) {
+	            elem.style.backgroundColor = 'red'
+	        }
+	    }
+        */
+	}
+    
+    content.style.width = clientWidth + 'px';
+
+	//}
+	content.appendChild(frag);
+
+	// Initialize Scroller
+	var scroller = new Scroller(render, {
+		//snapping: true
+	});
+	
+	
+	// Setup Scroller
+
+	var rect = container.getBoundingClientRect();
+
+	scroller.setPosition(rect.left+container.clientLeft, rect.top+container.clientTop);
+	scroller.setDimensions(container.clientWidth, container.clientHeight, content.offsetWidth, content.offsetHeight);
+	//scroller.setSnapSize(400, 400);
+	
+	
+	// Event Handler
+	
+	if ('ontouchstart' in window) {
+		
+		container.addEventListener("touchstart", function(e) {
+			// Don't react if initial down happens on a form element
+			if (e.target.tagName.match(/input|textarea|select/i)) {
+				return;
+			}
+			
+			scroller.doTouchStart(e.touches, e.timeStamp);
+			e.preventDefault();
+		}, false);
+
+		document.addEventListener("touchmove", function(e) {
+			scroller.doTouchMove(e.touches, e.timeStamp);
+		}, false);
+
+		document.addEventListener("touchend", function(e) {
+			scroller.doTouchEnd(e.timeStamp);
+		}, false);
+		
+	} else {
+		
+		var mousedown = false;
+
+		container.addEventListener("mousedown", function(e) {
+			// Don't react if initial down happens on a form element
+			if (e.target.tagName.match(/input|textarea|select/i)) {
+				return;
+			}
+			
+			scroller.doTouchStart([{
+				pageX: e.pageX,
+				pageY: e.pageY
+			}], e.timeStamp);
+
+			mousedown = true;
+		}, false);
+
+		document.addEventListener("mousemove", function(e) {
+			if (!mousedown) {
+				return;
+			}
+
+			scroller.doTouchMove([{
+				pageX: e.pageX,
+				pageY: e.pageY
+			}], e.timeStamp);
+
+			mousedown = true;
+		}, false);
+
+		document.addEventListener("mouseup", function(e) {
+			if (!mousedown) {
+				return;
+			}
+
+			scroller.doTouchEnd(e.timeStamp);
+
+			mousedown = false;
+		}, false);
+		
+	}
+	
+	</script>
+</body>
+</html>

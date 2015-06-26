@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>MOnkey Sling</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!-- Enable IE9 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- <meta name="viewport" content="width=device-width", initial-scale=1.0, user-scalable="no"/>-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="assets/css/base.css" type="text/css" />
+    
+      <style>
+        /* test stuff */
+        
+        #tests{
+	        background: #eee;
+	        padding: 10px;
+	        border: 2px solid black;
+        }
+        #tests > div{
+	        vertical-align: center;
+	        padding: 4px 0;
+        }
+
+        #tests > div > *{
+	        display: inline-block;
+	        vertical-align: center;
+        }
+
+        #tests label{
+	        width: 100px;
+        }
+
+        button{
+	        padding: 6px 10px;
+	        margin-right: 1px;
+        }
+      
+      </style>
+
+   </head>
+   <body onselectstart="return false;"  style="width:100%; height:100%;">
+    <table cellpadding="0" cellspacing="0" border="0" class="fill">
+        <tr>
+            <td align=center valign=middle>
+                <div style="border:2px solid black; width:1024px; height:768px;" class="container" id="container">
+                    <div id="fps" style="position:absolute; top:0px; left:0px; color:red; z-index:1;"></div>
+                    <canvas id="canvas" width="1024" height="768" style="border:0px solid black; background-colorXX:#B6E0F4;"></canvas>
+                    <div class="level-complete-template ingame-container fill" style="display:none;">
+                        <div class="ingame-shadow fill"></div>
+                        <table class="ingame-container fill">
+                            <tr>
+                                <td align=center valign=middle>
+                                    <div  class="ingame-stars-buttons-wrapper">
+                                        <div class="ingame-stars-buttons-wrapper-shadow ingame-stars-buttons-wrapper" style="height: 100%; position:absolute; top:0px;"></div>
+                                        <div style="" class="ingame-stars-buttons-wrapper">
+                                            <canvas class="ingame-level-completed-canvas ingame-container fill" style="left:0px; top:0px;"></canvas>
+                                            <table class="ingame-container fill ingame-stars-buttons-wrapper" border="0" cellpadding="0" cellspacing="0" style="background-colorXX:red;">
+                                                <tr>
+                                                    <td align="center">
+                                                        <div class="ingame-level-completed-title">
+                                                            Level Cleared!
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" style="" valign=top>
+                                                        <div class="level-completed-star-container">
+                                                            <div class="level-completed-star level-completed-star-off" style="display:inline-block"></div>
+                                                            <div class="level-completed-star level-completed-star-off" style="display:inline-block"></div>
+                                                            <div class="level-completed-star level-completed-star-off" style="display:inline-block"></div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center" valign="top">
+                                                        <div style="min-height:100px;">
+                                                            <div style="margin-bottom:10px;">
+                                                                <div class="ingame-btn ingame-btn-main" style="display:inline-block"></div>
+                                                                <div class="ingame-btn ingame-btn-stop" style="display:none;"></div>
+                                                                <div class="ingame-btn ingame-btn-refresh" style="display:inline-block; margin-left:10px;"></div>
+                                                                <div class="ingame-btn ingame-btn-play" style="display:inline-block;  margin-left:10px;"></div>
+                                                                <div class="ingame-btn ingame-btn-share" style="margin-left:10px; display:none;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                   </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <div id="debug4" style="display:none;"></div>
+   </body>
+    <script type="text/javascript" src="build/thirdparty.js"></script>
+    <script type="text/javascript" src="js/1.0-PubSub.js"></script>
+    <script type="text/javascript" src="js/0.4.102-CAAT.js"></script>
+    <script type="text/javascript" src="js/__Raf.js"></script>
+    <script type="text/javascript" src="js/__Animate.js"></script>
+	<script type="text/javascript" src="js/__Scroller.js"></script>
+    <script type="text/javascript" src="js/1.0-jaws.js"></script>
+    <script type="text/javascript" src="js/2.1a.3-Box2D.js"></script>
+    <script type="text/javascript" src="js/AppConfig.js"></script>
+    <script type="text/javascript" src="js/Base.js"></script>
+    <script type="text/javascript" src="js/BaseHelpers.js"></script>
+    <script type="text/javascript" src="js/CAAT-Actors.js"></script>
+    <script type="text/javascript" src="js/CAAT-Overrides.js"></script>
+    <script type="text/javascript" src="js/CategorySelection.js"></script>
+    <script type="text/javascript" src="js/InGameResources.js"></script>
+    <script type="text/javascript" src="js/InGameMenu.js"></script>
+    <script type="text/javascript" src="js/EntitiesBalloon.js"></script>
+    <script type="text/javascript" src="js/EntitiesBubble.js"></script>
+    <script type="text/javascript" src="js/EntitiesBlocks.js"></script>
+    <script type="text/javascript" src="js/EntitiesBlocks2.js"></script>
+    <script type="text/javascript" src="js/EntitiesBalls.js"></script>
+    <script type="text/javascript" src="js/EntitiesCrates.js"></script>
+    <script type="text/javascript" src="js/Emitter.js"></script>
+    <script type="text/javascript" src="js/Entities.js"></script>
+    <script type="text/javascript" src="js/EntitiesHero.js"></script>
+    <script type="text/javascript" src="js/EntitiesEffects.js"></script>
+    <script type="text/javascript" src="js/EntitiesEndLevel.js"></script>
+    <script type="text/javascript" src="js/EntitiesEnemies.js"></script>
+    <script type="text/javascript" src="js/EntitiesPlatforms.js"></script>
+    <script type="text/javascript" src="js/IntroBase.js"></script>
+    <script type="text/javascript" src="js/Howto.js"></script>
+    <script type="text/javascript" src="js/MenuSelectionBase.js"></script>
+    <script type="text/javascript" src="js/EntityPlayStateBase.js"></script>
+    <script type="text/javascript" src="js/Sounds.js"></script>
+    <script type="text/javascript" src="js/LevelCompleteScene.js"></script>
+    <script type="text/javascript" src="js/LevelLoaderPlayState.js"></script>
+    <script type="text/javascript" src="js/MonkeySlingMenu.js"></script>
+    <script type="text/javascript" src="js/MonkeySling.js"></script>
+    <script type="text/javascript" src="js/SharedLevelPlayState.js"></script>
+    <script type="text/javascript" src="js/TestDesigner.js"></script>
+    <script type="text/javascript" src="js/Toolbox.js"></script>
+    
+    <script type="text/javascript" src="js/zLevels.js"></script>
+    <script type="text/javascript" src="js/ViewStatesChange.js"></script>
+    
+  <!-- <script type="text/javascript" src="build/compiled.js"></script>-->
+    
+  <!-- <script type="text/javascript" src="/Services/SharedLevelService.ashx?proxy"></script>
+   <script type="text/javascript" src="/js/share.js"></script>-->
+   
+    <script type="text/javascript" src="win8/js/SharedLevelService.js"></script>
+  
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31465988-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function () {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+</script>
+</html>

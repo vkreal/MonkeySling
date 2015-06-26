@@ -1,0 +1,120 @@
+.LevelButtonLock
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -0px  -0px;
+}
+.LevelButtonUnlock-Star1
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -100px  -0px;
+}
+.LevelButtonUnlock-Star2
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -200px  -0px;
+}
+.LevelButtonUnlock-Star3
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -300px  -0px;
+}
+.LevelButtonUnlock
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -400px  -0px;
+}
+.ingame-back-button
+{
+    width              : 82px;
+    height             : 72px;
+    background-position: -500px  -0px;
+}
+.ingame-btn-add
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -582px  -0px;
+}
+.ingame-btn-main
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -682px  -0px;
+}
+.ingame-btn-music-off
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -782px  -0px;
+}
+.ingame-btn-music-small-off
+{
+    width              : 64px;
+    height             : 64px;
+    background-position: -882px  -0px;
+}
+.ingame-btn-music-small
+{
+    width              : 64px;
+    height             : 64px;
+    background-position: -946px  -0px;
+}
+.ingame-btn-music
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1010px  -0px;
+}
+.ingame-btn-pause
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1110px  -0px;
+}
+.ingame-btn-play
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1210px  -0px;
+}
+.ingame-btn-refresh
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1310px  -0px;
+}
+.ingame-btn-share
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1410px  -0px;
+}
+.ingame-btn-stop
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1510px  -0px;
+}
+.ingame-btn-trashcan-on
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1610px  -0px;
+}
+.ingame-btn-trashcan
+{
+    width              : 100px;
+    height             : 100px;
+    background-position: -1710px  -0px;
+}
+.ingame-main-play-button
+{
+    width              : 155px;
+    height             : 78px;
+    background-position: -1810px  -0px;
+}
