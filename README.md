@@ -3,7 +3,7 @@ Sling Shoot game written in Javascript and HTML5.
 
 I made this game to learn game programming and concepts :)
 
-Check it out here [Demo]:http://vorun.com/ms/chrome/ or folk the project and run it locally.
+Check it out here http://vorun.com/ms/chrome/ or folk the project and run it locally.
 
 Here are the features:
 
@@ -17,5 +17,7 @@ Here are the features:
 Checkout my other games
 
 [Google Play](https://play.google.com/store/apps/dev?id=7663973636960361438)
+
 [App Store](https://itunes.apple.com/nz/developer/vorun-kreal/id831174738)
+
 [Amazon App Store](https://www.amazon.com/s/field-brandtextbin=kreal&node=2350149011)
