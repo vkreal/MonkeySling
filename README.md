@@ -14,9 +14,7 @@ Here are the features:
 * Support ALL modern browsers
 * etc..
 
-
 Checkout my other games
-
 [Google Play]:https://play.google.com/store/apps/dev?id=7663973636960361438
 [App Store]:https://itunes.apple.com/nz/developer/vorun-kreal/id831174738
 [Amazon App Store]:https://www.amazon.com/s/field-brandtextbin=kreal&node=2350149011
