@@ -20,4 +20,4 @@ Checkout my other games
 
 [App Store](https://itunes.apple.com/nz/developer/vorun-kreal/id831174738)
 
-[Amazon App Store](https://www.amazon.com/s/field-brandtextbin=kreal&node=2350149011)
+[Amazon App Store](https://www.amazon.com/s?rh=n%3A2350149011%2Cp_4%3Akreal&ref=bl_dp_s_web_0)
